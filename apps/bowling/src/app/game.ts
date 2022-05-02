@@ -14,11 +14,13 @@ export class Game {
         frameIndex++;
         continue;
       }
+
+      score += this.rolls[frameIndex] + this.rolls[frameIndex + 1];
+
       if (this.isSpare(frameIndex)) {
-        score += 10 + this.spareBouns(frameIndex);
-      } else {
-        score += this.rolls[frameIndex] + this.rolls[frameIndex + 1];
+        score += this.spareBouns(frameIndex);
       }
+
       frameIndex += 2;
     }
     return score;
