@@ -11,14 +11,22 @@ describe('Game', () => {
     expect(game).toBeTruthy();
   });
 
-  it('should return score of 0', () => {
+  test('gutter game', () => {
     rollMany(20, 0);
     expect(game.score).toBe(0);
   });
 
-  it('should return score of 20', () => {
+  test('all ones', () => {
     rollMany(20, 1);
     expect(game.score).toBe(20);
+  });
+
+  test('test on one spare', () => {
+    game.roll(5);
+    game.roll(5); // spare
+    game.roll(3);
+    rollMany(17, 0);
+    expect(game.score).toBe(16);
   });
 
   function rollMany(n: number, pins: number) {
