@@ -17,9 +17,7 @@ describe('Game', () => {
   });
 
   it('should return score of 20', () => {
-    for (let i = 0; i < 20; i++) {
-      game.roll(1);
-    }
+    rollMany(20, 1);
     expect(game.score).toBe(20);
   });
 
