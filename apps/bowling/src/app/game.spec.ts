@@ -33,6 +33,7 @@ describe('Game', () => {
     game.roll(10);
     game.roll(3);
     game.roll(4);
+    rollMany(17, 0);
     expect(game.score).toBe(24);
   });
 
